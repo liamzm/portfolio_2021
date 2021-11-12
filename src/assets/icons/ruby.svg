@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 250 250" enable-background="new 0 0 250 250" xml:space="preserve">
+<g id="Layer_1">
+</g>
+<g id="Layer_3">
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M121.1,235.9l3.8,4.4l6.4-7.7L250,97l-38.5-67.5L144,8.5l-91,3c0,0-36.5,39.5-37,41s-14.5,40-14.5,40
+				S3,132,9,137S121.1,235.9,121.1,235.9z"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<g clip-path="url(#SVGID_2_)">
+			<g>
+				<path fill="#C4938C" d="M64.4,26.9l-59.9,69L41,112c0,0,21.4,3,23.9-3.6c2.5-6.6,5.9-4.1,4.6-12.5L64.4,26.9z"/>
+				<polygon fill="#763936" points="59,95.9 4.6,95.9 125.7,241.3 114,113.8 				"/>
+				<path fill="#C4938C" d="M125.4,95.4V26.2c0,0-38.9,27.3-39.2,28.2s4.8,35.5,6.1,36s22.3,18.2,22.3,18.2L125.4,95.4z"/>
+				<polygon fill="#9A4746" points="90.8,63.3 125.2,26.2 64.4,26.2 69.7,50.8 				"/>
+				<path fill="#C4938C" d="M41.4,92.2c-0.9,0.7-3.9,3.4-3.9,3.4l87.6,144.3L88.1,91.5L41.4,92.2z"/>
+				<polygon fill="#AE6B64" points="63.5,93.7 125.4,241.3 125.4,93.9 				"/>
+				<polygon fill="#763936" points="63.5,93.9 125.4,93.9 64,26.9 				"/>
+			</g>
+			<g>
+				<path fill="#9A4746" d="M185.3,26.9l59.9,69L208.7,112c0,0-21.4,3-23.9-3.6s-5.9-4.1-4.6-12.5L185.3,26.9z"/>
+				<polygon fill="#763936" points="190.7,95.9 245.1,95.9 124,241.3 135.6,113.8 				"/>
+				<path fill="#AE6B64" d="M124.2,95.4V26.2c0,0,38.9,27.3,39.2,28.2s-4.8,35.5-6.1,36s-22.3,18.2-22.3,18.2L124.2,95.4z"/>
+				<polygon fill="#9A4746" points="158.8,63.3 124.5,26.2 185.3,26.2 180,50.8 				"/>
+				<path fill="#9A4746" d="M208.2,92.2c0.9,0.7,3.9,3.4,3.9,3.4l-87.6,144.3l37.1-148.4L208.2,92.2z"/>
+				<polygon fill="#763936" points="186.2,93.7 124.3,241.3 124.3,93.9 				"/>
+				<polygon fill="#C4938C" points="186.2,93.9 124.2,93.9 185.7,26.9 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
