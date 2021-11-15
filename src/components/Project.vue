@@ -59,7 +59,10 @@ export default {
 
 .image {
     /* object-fit: cover; */
+    max-height: 319.031px;
     border-radius: 10px;
+    height: auto;
+    width: 100%;
 }
 
 h1 {
