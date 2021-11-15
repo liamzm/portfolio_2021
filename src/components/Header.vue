@@ -5,7 +5,7 @@
         
             <div id="header" :class="{ 'fixed' : fixed === true }">
                 <div class="content">
-                    <h3>Liam Zanyk McLean</h3>
+                    <h3 @click="returnHome()">Liam Zanyk McLean</h3>
                     <div class="links">
                         <div>About</div>
                         <div>Contact</div>
@@ -32,6 +32,9 @@ export default {
         window.addEventListener('scroll', this.handleScroll);
     },
     methods: {
+        returnHome() {
+            this.$router.replace('/');
+        },
         handleScroll (event) {
             var target = document.querySelector('#header');
             if (window.scrollY >= target.offsetHeight) {
@@ -54,6 +57,7 @@ export default {
     flex-direction: row;
     box-sizing: border-box;
     height: 60px;
+    z-index: 1;
 }
 
 .pseudo {
@@ -93,6 +97,10 @@ export default {
 .links div {
     box-sizing: border-box;
     padding: 10px 20px 10px 20px;
+}
+
+#header h3 {
+    cursor: pointer;
 }
 
 @media(max-width: 700px) {
