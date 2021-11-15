@@ -58,7 +58,7 @@ export default {
 }
 
 .image {
-    object-fit: cover;
+    /* object-fit: cover; */
     border-radius: 10px;
 }
 
