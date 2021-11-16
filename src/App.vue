@@ -104,6 +104,68 @@ body {
   background-color: #A7A9AB;
 }
 
+.tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    padding: 2.5px 5px 2.5px 5px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 2.5px;
+    width: max-content;
+    margin: 30px 0px 10px 0px;
+    text-transform: uppercase;
+}
+
+.project-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.sidebar {
+  width: 30%;
+  margin-right: 5%;
+}
+
+.project-cat {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-cat h3 {
+  margin: 0px 0px 20px 0px;
+}
+
+.project-cat p {
+  font-family: 'Bitter', serif;
+  margin-bottom: 50px;
+}
+
+.image-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.image-cont img {
+  border-radius: 5px;
+  /* border: 1px solid lightgray; */
+}
+
+.two-image img {
+  width: 49%;
+  object-fit: cover;
+  max-height: 300px;
+}
+
+.mobile-view img {
+  max-height: 700px;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.2s;
 }
@@ -112,6 +174,20 @@ body {
   opacity: 0;
 }
 
+@media(max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    margin: 20px 0px 0px 0px;
+  }
+
+  .project-cat {
+    width: 100%;
+  }
+
+  .project-container {
+    flex-direction: column-reverse;
+  }
+}
 
 
 </style>

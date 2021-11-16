@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/components/Home'
-import Menulingua from '@/components/Menulingua'
+import ProjectDetail from '@/components/ProjectDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +12,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/menulingua',
-    name: 'Menulingua',
-    component: Menulingua
+    path: '/:project',
+    name: 'ProjectDetail',
+    component: ProjectDetail
   }
 ]
 

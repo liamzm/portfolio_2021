@@ -73,20 +73,6 @@ h1 {
     box-sizing: border-box;
 }
 
-.tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    box-sizing: border-box;
-    padding: 2.5px 5px 2.5px 5px;
-    color: gray;
-    border: 1px solid gray;
-    border-radius: 2.5px;
-    width: max-content;
-    margin: 30px 0px 10px 0px;
-    text-transform: uppercase;
-}
-
 .project-link {
     margin-top: 0px;
 }

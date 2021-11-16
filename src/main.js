@@ -3,8 +3,18 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
+import { projects } from './projects/projects.js'
 
 Vue.config.productionTip = false
+
+const projectsPlugin = {
+  install() {
+    Vue.projects = projects
+    Vue.prototype.$projects = projects
+  }
+}
+
+Vue.use(projectsPlugin)
 
 new Vue({
   router,
