@@ -73,8 +73,9 @@ export default {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    border-bottom: 1px solid lightgray;
+    /* background-color: rgba(255, 255, 255, 1); */
+    /* border-bottom: 1px solid lightgray; */
+    background-color: #F7F7F7;
 }
 
 .content {

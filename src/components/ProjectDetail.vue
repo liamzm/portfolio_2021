@@ -4,22 +4,23 @@
 
         <div class="tag">{{ project.tag }}</div>
 
-        <div class="header">
+        <div class="header" @click="goToLink(project.video_link)">
 
-            <img :src="require(`../assets/images/${project.image}.png`)" class="image" />
+            <img :src="require(`../assets/images/${project.image}.png`)" class="image" v-if="project.video_link === ''" />
 
-            <img :src="require(`../assets/images/${project.icon}.svg`)" class="icon" />
+
+            <img :src="require(`../assets/images/${project.icon}`)" class="icon" v-if="project.icon != ''" />
 
         </div>
 
 
         <div class="content">
 
+            <vue-vimeo-player ref="player" :video-id="project.video_link" :options="{ responsive: true }" v-if="project.video_link != null" />
+
             <div class="name-skills">
 
                 <div class="skills">
-
-                    <h4>Skills</h4>
 
                     <div class="skills-inner-cont">
 
@@ -38,7 +39,7 @@
 
                     <h1>{{ project.name }}</h1>
 
-                    <h2>{{ project.site }}</h2>
+                    <h2 v-if="project.site != ''">{{ project.site }}</h2>
 
                     <p>{{ project.description }}</p>
 
@@ -50,7 +51,13 @@
 
         </div>
 
-        <Menulingua :project="project" />
+        <Menulingua :project="project" v-if="this.$router.currentRoute.params.project === 'menulingua'" />
+
+        <IlsFrequencyLookup :project="project" v-if="this.$router.currentRoute.params.project === 'ils-frequency-lookup'" />
+
+        <PassengerFlights :project="project" v-if="this.$router.currentRoute.params.project === 'longest-passenger-flights'" />
+
+        <ChineseTourists :project="project" v-if="this.$router.currentRoute.params.project === 'chinese-tourists'" />
 
     </div>
 
@@ -60,12 +67,18 @@
 <script>
 import Menulingua from '@/components/Menulingua'
 import IlsFrequencyLookup from '@/components/IlsFrequencyLookup'
+import PassengerFlights from '@/components/PassengerFlights'
+import ChineseTourists from '@/components/ChineseTourists'
+import { vueVimeoPlayer } from 'vue-vimeo-player'
 
 export default {
     name: 'ProjectDetail',
     components: {
         Menulingua,
-        IlsFrequencyLookup
+        IlsFrequencyLookup,
+        PassengerFlights,
+        ChineseTourists,
+        vueVimeoPlayer
     },
     props: ['project'],    
     created() {
@@ -83,6 +96,11 @@ export default {
                 if (projects[i].route === project_name) {
                     this.project = projects[i]
                 }
+            }
+        },
+        goToLink(link) {
+            if (link != null) {
+                window.location.replace(link)
             }
         }
     }
@@ -116,6 +134,10 @@ export default {
     border-radius: 10px;
 }
 
+.video-container {
+    width: 100%;
+}
+
 .icon {
     width: 30%;
     margin-left: 2%;
@@ -128,6 +150,7 @@ export default {
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 20px;
 }
 
 .name-skills {
@@ -144,6 +167,14 @@ export default {
 
 .name {
     width: 65%;
+    /* margin-top: -70px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    margin-left: -10px; */
+    /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
+    /* padding: 10px; */
 }
 
 .name h1 {

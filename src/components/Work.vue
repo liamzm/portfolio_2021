@@ -6,7 +6,7 @@
 
         <div class="projects-container">
 
-            <div v-for="project in projects" :key="project.name" class="project" @click="$router.replace(`${project.route}`)">
+            <div v-for="project in projects" :key="project.name" :class="{ 'minor-project' : project.major_project === false }" class="project" @click="$router.replace(`${project.route}`)">
 
                 <Project :project="project" />
 
@@ -66,6 +66,13 @@ export default {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+}
+
+.minor-project {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;   
 }
 
 @media(max-width: 700px) {

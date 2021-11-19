@@ -2,7 +2,7 @@
 
     <div class="project-thumb">
 
-        <img :src="require(`../assets/images/${project.icon}.svg`)" class="icon" />
+        <img :src="require(`../assets/images/${project.icon}`)" class="icon" v-if="project.icon != ''" />
 
         <img :src="require(`../assets/images/${project.image}.png`)" class="image" />
 
@@ -53,8 +53,10 @@ export default {
 }
 
 .icon {
-    height: 50px;
+    height: 30px;
     margin-bottom: 20px;
+    max-width: 100px;
+    border-radius: 5px;
 }
 
 .image {
@@ -67,7 +69,7 @@ export default {
 
 h1 {
     margin: 10px 0px 20px 0px;
-    width: max-content;
+    /* width: max-content; */
     font-weight: 600;
     /* font-size: 50px; */
     box-sizing: border-box;

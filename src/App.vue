@@ -136,6 +136,10 @@ body {
   flex-direction: column;
 }
 
+.project-cat-full-width {
+  width: 100%;
+}
+
 .project-cat h3 {
   margin: 0px 0px 20px 0px;
 }
@@ -154,6 +158,11 @@ body {
 .image-cont img {
   border-radius: 5px;
   /* border: 1px solid lightgray; */
+}
+
+.one-image img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .two-image img {

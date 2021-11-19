@@ -3,7 +3,9 @@ const projects = [
         name: 'Menulingua',
         route: 'menulingua',
         image: 'menulingua',
-        icon: 'menulingua_logo',
+        video_link: '',
+        icon: 'menulingua_logo.svg',
+        major_project: true,
         tag: 'Progressive Web App • Full Stack',
         colour: '#94C13D',
         secondary_colour: '#EBE9FF',
@@ -46,7 +48,9 @@ const projects = [
         name: 'ILS frequency lookup',
         route: 'ils-frequency-lookup',
         image: 'ils-lookup',
-        icon: 'ils-lookup_logo',
+        video_link: '',
+        major_project: true,
+        icon: 'ils-lookup_logo.svg',
         tag: 'Progressive Web App • Frontend',
         colour: '#113E4D',
         secondary_colour: '#EBE9FF',
@@ -64,9 +68,59 @@ const projects = [
             { 
                 tag: '87,000',
                 description: 'Number of airports included in the project'
+            },
+            {
+                tag: '100,000+',
+                description: 'Total number of searches on ILS Frequency Lookup'                
+            },
+            {
+                tag: '85',
+                description: 'Number of countries in which unique users are located.'                
             }
         ],
         site: 'ils-lookup.com'
+    },
+    { 
+        name: "World's longest passenger flights",
+        route: 'longest-passenger-flights',
+        image: 'longflights2',
+        video_link: 245298475,
+        icon: 'flights_icon.png',
+        major_project: false,
+        tag: 'Video • Animation',
+        colour: '#7D8D8A',
+        secondary_colour: '#0F0F36',
+        description: 'A look at (pre-Covid) passenger flights that allow passengers to travel across continents in a matter of hours.',
+        skills: [
+            'Adobe After Effects', 
+            'Animation',
+            'Data visualization'
+        ],
+        facts: [
+
+        ],
+        site: ''
+    },
+    { 
+        name: "Chinese tourism: facts and figures",
+        route: 'chinese-tourists',
+        image: 'tourists',
+        video_link: 647203662,
+        icon: 'cra_logo.svg',
+        major_project: false,
+        tag: 'Video • Animation',
+        colour: '#851618',
+        secondary_colour: '#0F0F36',
+        description: 'Before Covid, tourists from China were an important (and often misuderstood) subset of the global tourism industry.',
+        skills: [
+            'Adobe After Effects', 
+            'Animation',
+            'Data visualization'
+        ],
+        facts: [
+
+        ],
+        site: ''
     }
 ]
 

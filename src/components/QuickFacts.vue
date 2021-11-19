@@ -1,6 +1,6 @@
 <template>
     
-    <div class="quick-facts">
+    <div class="quick-facts" v-if="project.facts.length > 0">
     
         <h3>Quick facts</h3>
 
@@ -31,10 +31,11 @@ export default {
     display: flex;
     box-sizing: border-box;
     padding: 20px;
-    /* border: 1px solid lightgray; */
     background-color: #F7F7F7;
     border-radius: 5px;
     flex-direction: column;
+    margin-bottom: 50px;
+    border-radius: 10px;
 }
 
 .quick-facts h3 {

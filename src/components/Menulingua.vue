@@ -63,13 +63,7 @@ export default {
     components: {
         QuickFacts
     },
-    props: ['project'],
-    data() {
-        return {
-
-        }
-    },
-
+    props: ['project']
 }
 
 
