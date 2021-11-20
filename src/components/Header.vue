@@ -57,7 +57,7 @@ export default {
     flex-direction: row;
     box-sizing: border-box;
     height: 60px;
-    z-index: 1;
+    z-index: 15;
 }
 
 .pseudo {
@@ -73,8 +73,6 @@ export default {
     position: fixed;
     top: 0;
     width: 100%;
-    /* background-color: rgba(255, 255, 255, 1); */
-    /* border-bottom: 1px solid lightgray; */
     background-color: #F7F7F7;
 }
 

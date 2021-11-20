@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/components/Home'
 import ProjectDetail from '@/components/ProjectDetail.vue'
+import WorldCities from '@/components/WorldCities.vue'
 
 Vue.use(VueRouter)
 
@@ -11,11 +12,16 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  { 
+    path: '/world-cities',
+    name: 'WorldCitiest',
+    component: WorldCities
+  },
   {
     path: '/:project',
     name: 'ProjectDetail',
     component: ProjectDetail
-  }
+  },
 ]
 
 const router = new VueRouter({
