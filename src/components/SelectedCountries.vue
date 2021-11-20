@@ -14,7 +14,7 @@
 
         </div>
 
-        <div class="change" @click="toggleCountriesModal()">Change countries</div>
+        <div class="change" @click="toggleCountriesModal()">{{ getText() }}</div>
 
         <transition name="fade">
 
@@ -69,6 +69,15 @@ export default {
         },
         toggleCountriesModal() {
             this.view_countries_modal = !this.view_countries_modal
+        },
+        getText() {
+            var newtext = ''
+            if (this.view_countries_modal === true) {
+                newtext = 'Hide countries'
+            } else {
+                newtext = 'Change countries'
+            }
+            return newtext
         }
     }
 }
@@ -139,6 +148,12 @@ h4 {
     bottom: 0;
     width: 100%;
     background-color: white;
+}
+
+@media(max-width: 700px) {
+    .countries-box {
+        font-size: 10px;
+    }
 }
 
 </style>

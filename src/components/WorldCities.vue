@@ -14,11 +14,11 @@
 
             <div v-for="country in selected_countries" :key="country" class="country">
 
-                {{ country.toUpperCase() }}
+                <div class="country-name-container">
 
-                
+                    <p class="country-name">{{ country.toUpperCase() }}</p>
 
-                 <!-- <country-flag :country="country['Country '" size='small'/> -->
+                </div>
 
                 <div v-for="city in cities" :key="city['Coordinates']" class="city-parent-container">
 
@@ -160,6 +160,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 20%;
+    /* justify-content: center; */
 }
 
 .country h3 {
@@ -176,6 +177,27 @@ h2 {
     justify-content: center;
     align-items: center;
     position: relative;
+
+}
+
+.country-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+    justify-content: center;
+}
+
+.country-name {
+    font-weight: 600;
+    font-size: 14px;
+    /* margin-bottom: 50px; */
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    padding: 2.5px 5px 2.5px 5px;
+    border-radius: 2.5px;
+    text-align: center;
+    /* width: max-content; */
 }
 
 .country .city-parent-container:first-child {
@@ -183,6 +205,12 @@ h2 {
     height: 240px;
     display: flex;
     align-items: center; */
+}
+
+@media(max-width: 700px) {
+    .country-name {
+        font-size: 11px;
+    }
 }
 
 
