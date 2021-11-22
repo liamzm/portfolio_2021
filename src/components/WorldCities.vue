@@ -14,7 +14,7 @@
 
                 <div class="country-name-container" :style="{ 'margin-bottom' : getTopMargin(country.name) }">
 
-                    <country-flag :country="country.code" :rounded="true" size='medium'/>
+                    <country-flag :country="country.code" size='medium'/>
 
                     <p class="country-name">{{ country.name.toUpperCase() }}</p>
                     

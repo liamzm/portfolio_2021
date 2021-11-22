@@ -7,7 +7,7 @@
             <div class="pop-circle" :class="{ 'selected' : this.$store.getters.getSelectedCity === this.city }" :style="{ 'width' : getWidth(city['Population']), 'padding-bottom' : getWidth(city['Population']), 'background-color' : getBackgroundColour(city['Population']) }" @click="showDetails()" @mouseover="showConditionalDetails()" @mouseout="hideConditionalDetails()"></div>
         
             <div class="city-details" :class="{ 'visible' : (show_details === true) }">
-                <h3>{{ city['Name'] }}</h3>
+                <h3>{{ city['ASCII Name'] }}</h3>
                 <p>{{ getReadablePopulation(city['Population']) }}</p>
 
             </div>
@@ -35,7 +35,7 @@
                                 </div>
 
                                 <h5>{{ city["Country name EN"] }}</h5>
-                                <h3>{{ city['Name'] }}</h3>
+                                <h3>{{ city['ASCII Name'] }}</h3>
                                 <p>Population <span>{{ getReadablePopulation(city['Population']) }}</span></p>   
 
                             </div>

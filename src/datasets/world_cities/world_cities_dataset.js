@@ -2861,7 +2861,7 @@ const world_cities_dataset = [
     },
     {
       "Geoname ID": 3469058,
-      "Name": "Bras�lia",
+      "Name": "Brasilia",
       "ASCII Name": "Brasilia",
       "Country Code": "BR",
       "Country name EN": "Brazil",
@@ -4244,7 +4244,7 @@ const world_cities_dataset = [
       "Name": "Aleppo",
       "ASCII Name": "Aleppo",
       "Country Code": "SY",
-      "Country name EN": "Syrian Arab Republic",
+      "Country name EN": "Syria",
       "Country Code 2": "",
       "Admin1 Code": "09",
       "Admin2 Code": "",
@@ -4255,7 +4255,7 @@ const world_cities_dataset = [
       "DIgital Elevation Model": 401,
       "Timezone": "Asia/Damascus",
       "Modification date": "9/5/19",
-      "LABEL EN": "Syrian Arab Republic",
+      "LABEL EN": "Syria",
       "Coordinates": "36.20124, 37.16117",
       "FIELD18": ""
     },
@@ -4464,7 +4464,7 @@ const world_cities_dataset = [
       "Name": "Damascus",
       "ASCII Name": "Damascus",
       "Country Code": "SY",
-      "Country name EN": "Syrian Arab Republic",
+      "Country name EN": "Syria",
       "Country Code 2": "",
       "Admin1 Code": "13",
       "Admin2 Code": "",
@@ -4475,7 +4475,7 @@ const world_cities_dataset = [
       "DIgital Elevation Model": 701,
       "Timezone": "Asia/Damascus",
       "Modification date": "9/5/19",
-      "LABEL EN": "Syrian Arab Republic",
+      "LABEL EN": "Syria",
       "Coordinates": "33.5102, 36.29128",
       "FIELD18": ""
     },
@@ -5421,7 +5421,7 @@ const world_cities_dataset = [
     },
     {
       "Geoname ID": 3405870,
-      "Name": "Bel�m",
+      "Name": "Belem",
       "ASCII Name": "Belem",
       "Country Code": "BR",
       "Country name EN": "Brazil",
