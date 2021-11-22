@@ -6,23 +6,23 @@
 
         <h2>Comparing the cities of the world with populations of more than 1 million people.</h2>
 
-        <!-- <h4>World's 10 most populous countries only</h4> -->
-
         <SelectedCountries :selected_countries="selected_countries" :all_countries="all_countries" v-on:countries_changed="updateCountries()" />
 
         <div class="cities-container">
 
-            <div v-for="country in selected_countries" :key="country" class="country">
+            <div v-for="country in selected_countries" :key="country.name" class="country">
 
-                <div class="country-name-container">
+                <div class="country-name-container" :style="{ 'margin-bottom' : getTopMargin(country.name) }">
 
-                    <p class="country-name">{{ country.toUpperCase() }}</p>
+                    <country-flag :country="country.code" :rounded="true" size='medium'/>
 
+                    <p class="country-name">{{ country.name.toUpperCase() }}</p>
+                    
                 </div>
 
-                <div v-for="city in cities" :key="city['Coordinates']" class="city-parent-container">
+                <div v-for="city in cities" :key="city['Coordinates']" class="city-parent-container" v-if="(city['Country name EN'].toLowerCase()) === country.name">
 
-                    <City :city="city" :country="String(country)" v-if="(city['Country name EN'].toLowerCase()) === country" />
+                    <City :city="city" :country="String(country)"  />
 
                 </div>
 
@@ -54,12 +54,11 @@ export default {
     data() {
         return {
             cities: [],
-            selected_countries: ['china', 'india', 'united states', 'indonesia', 'brazil'],
+            selected_countries: [{name: 'china', code: 'cn'}, {name: 'india', code: 'in'}, {name: 'united states', code: 'us'}, {name: 'indonesia', code: 'id'}, {name: 'brazil', code: 'br'}],
             all_countries: []
         }
     },
     created() {
-        // this.getCitiesByCountry();
         this.getCountries();
         this.getCities();
     },
@@ -71,58 +70,30 @@ export default {
             const cities = this.$world_cities_dataset
             const countries = []
             for (let i = 0; i < cities.length; i++) {
-                if (!countries.includes(cities[i]["Country name EN"].toLowerCase())) {
-                    countries.push(cities[i]["Country name EN"].toLowerCase())
+                if (countries.filter(e => e.name === cities[i]["Country name EN"].toLowerCase()).length < 1) {
+                    countries.push({ name: cities[i]["Country name EN"].toLowerCase(), code: cities[i]["Country Code"].toLowerCase() })
                 }
             }
-            this.all_countries = countries.sort()
+            var sortedCountries = countries .sort(function(a, b) {
+                        var textA = a.name.toUpperCase();
+                        var textB = b.name.toUpperCase();
+                        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                    });
+            this.all_countries = sortedCountries
+        },
+        getTopMargin(country) {
+            const cities = this.$world_cities_dataset
+            const populations = []
+            const max = 22315474
+            for (let i = 0; i < cities.length; i++) {
+                if (cities[i]["Country name EN"].toLowerCase() === country) {
+                    populations.push(Number(cities[i]["Population"]))
+                }
+            }         
+            var largest = Math.max.apply(Math, populations);
+            var proportion = (1 - (largest / max)) * 50
+            return `${proportion}%`
         }
-        // getCitiesByCountry() {
-        //     var china = []
-        //     var india = []
-        //     var usa = []
-        //     var indonesia = []
-        //     var brazil = []
-        //     var bangladesh = []
-        //     var nigeria = []
-        //     var pakistan = []
-        //     var russia = []
-        //     var japan = []
-        //     const cities = this.$world_cities_dataset
-        //     for (let i = 0; i < cities.length; i++) {
-        //         if (cities[i]["Country Code"] === "CN") {
-        //             china.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "IN") {
-        //             india.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "US") {
-        //             usa.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "ID") {
-        //             indonesia.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "BR") {
-        //             brazil.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "BD") {
-        //             bangladesh.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "NG") {
-        //             nigeria.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "RU") {
-        //             russia.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "PK") {
-        //             pakistan.push(cities[i])
-        //         } else if (cities[i]["Country Code"] === "JP") {
-        //             japan.push(cities[i])
-        //         }
-        //     }
-        //     this.china = china
-        //     this.india = india
-        //     this.usa = usa
-        //     this.indonesia = indonesia
-        //     this.brazil = brazil
-        //     this.bangladesh = bangladesh
-        //     this.nigeria = nigeria
-        //     this.pakistan = pakistan
-        //     this.russia = russia
-        //     this.japan = japan
-        // }
     }
 }
 
@@ -160,7 +131,6 @@ h2 {
     flex-direction: column;
     align-items: center;
     width: 20%;
-    /* justify-content: center; */
 }
 
 .country h3 {
@@ -184,20 +154,22 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60px;
+    height: 100px;
     justify-content: center;
+    font-size: 12.5px;
 }
 
 .country-name {
     font-weight: 600;
-    font-size: 14px;
-    /* margin-bottom: 50px; */
-    /* border: 1px solid black; */
+    font-size: 12.5px;
     box-sizing: border-box;
     padding: 2.5px 5px 2.5px 5px;
     border-radius: 2.5px;
     text-align: center;
-    /* width: max-content; */
+    display: flex;
+    margin: 0px 0px 0px 0px;
+    /* flex-direction: column; */
+    align-items: center;
 }
 
 .country .city-parent-container:first-child {
@@ -205,6 +177,9 @@ h2 {
     height: 240px;
     display: flex;
     align-items: center; */
+    height: 200px;
+    width: 100%;
+    border: 1px dotted lightgray;
 }
 
 @media(max-width: 700px) {

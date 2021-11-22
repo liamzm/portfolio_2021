@@ -28,9 +28,15 @@
 
                             <div class="header-content">
 
+                                <div class="flag-container">
+
+                                    <country-flag :country="city['Country Code']" size='medium'/>
+
+                                </div>
+
                                 <h5>{{ city["Country name EN"] }}</h5>
                                 <h3>{{ city['Name'] }}</h3>
-                                <p>Population: <span>{{ getReadablePopulation(city['Population']) }}</span></p>   
+                                <p>Population <span>{{ getReadablePopulation(city['Population']) }}</span></p>   
 
                             </div>
 
@@ -68,10 +74,14 @@
 </template>
 
 <script>
+import CountryFlag from 'vue-country-flag'
 
 export default {
     name: 'City',
     props: ['city', 'country'],
+    components: {
+        CountryFlag
+    },
     data() {
         return {
             show_details: false,
@@ -104,9 +114,6 @@ export default {
             const max = 22315474
             var opacity = (pop / max)
             return `rgba(190, 30, 45, ${opacity})`
-
-            // return '#'+(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
-
         },
         getClass() {
             return this.country
@@ -235,10 +242,12 @@ export default {
 
 .header p {
     margin: 5px 0px 5px 0px;
+    color: gray;
 }
 
 .header p span {
     font-weight: 600;
+    color: black;
 }
 
 .exit-button {
@@ -268,7 +277,10 @@ export default {
 
 .header-content {
     margin: auto;
-    width: max-content;
+}
+
+.flag-container {
+    margin-left: -10px !important;
 }
 
 @media(max-width: 700px) {

@@ -44,6 +44,7 @@ export default {
     display: flex;
     align-items: center;
     background-color: #F7F7F7;
+    margin-top: 50px;
 }
 
 .footer-content {
