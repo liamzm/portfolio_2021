@@ -20,7 +20,7 @@
                     
                 </div>
 
-                <div v-for="city in cities" :key="city['Coordinates']" class="city-parent-container" v-if="(city['Country name EN'].toLowerCase()) === country.name">
+                <div v-for="city in cities" :key="city['Coordinates']" class="city-parent-container" v-if="(city['Country name EN'].toLowerCase()) === country.name" >
 
                     <City :city="city" :country="String(country)"  />
 
@@ -28,6 +28,29 @@
 
             </div>
 
+
+        </div>
+
+        <div class="important-stuff">
+
+            <h2>Important stuff</h2>
+
+            <div class="limitations">
+
+                <h4>This approach is to population analysis is limited.</h4>
+
+                <p>A "city" can be defined in many different ways, and some cities in this graphic are undoubtedly under- or over-represented because of defined city borders.</p>
+
+
+            </div>
+
+            <div class="sources">
+
+                <h4>Data source</h4>
+
+                <p>opendatasoft.com <a href="https://public.opendatasoft.com/explore/dataset/geonames-all-cities-with-a-population-1000/table/?disjunctive.cou_name_en&sort=name">Click to view dataset.</a></p>
+
+            </div>
 
         </div>
 
@@ -59,10 +82,14 @@ export default {
         }
     },
     created() {
+        this.scrollToTop();
         this.getCountries();
         this.getCities();
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo(0,0);
+        },
         getCities() {
             this.cities = this.$world_cities_dataset
         },
@@ -123,7 +150,8 @@ h2 {
     width: 100%;
     display: flex;
     flex-direction: row;
-    margin-top: 100px;
+    margin-top: 50px;
+    border-top: 1px dotted lightgray;
 }
 
 .country {
@@ -172,14 +200,33 @@ h2 {
     align-items: center;
 }
 
-.country .city-parent-container:first-child {
-    /* width: 100%;
-    height: 240px;
+.important-stuff {
     display: flex;
-    align-items: center; */
-    height: 200px;
-    width: 100%;
-    border: 1px dotted lightgray;
+    flex-direction: column;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding-top: 50px;
+    border-top: 1px dotted lightgray;
+}
+
+.important-stuff h2 {
+    margin: 0px 0px 20px 0px;
+}
+
+.important-stuff h4 {
+    margin: 0px 0px 10px 0px;
+}
+
+.important-stuff p {
+    font-family: 'Bitter', serif;
+    margin: 0px 0px 30px 0px;
+}
+
+.important-stuff a {
+    font-family: 'Bitter', serif;
+    text-decoration: none;
+    margin: 0px 0px 10px 0px;
+    font-weight: 600;
 }
 
 @media(max-width: 700px) {

@@ -102,6 +102,26 @@ const projects = [
         site: ''
     },
     { 
+        name: "Urban sprawl: world city data",
+        route: 'world-cities',
+        image: 'world-cities',
+        icon: 'worldcities_logo.svg',
+        major_project: false,
+        tag: 'Infographic • Javascript',
+        colour: '#DA858D',
+        secondary_colour: '#0F0F36',
+        description: "Explore all the world's cities with a population of 1 million or more. Includes basic data and maps integration.",
+        skills: [
+            'Vue.js', 
+            'Javascript',
+            'Data visualization'
+        ],
+        facts: [
+
+        ],
+        site: ''
+    },
+    { 
         name: "Chinese tourism: facts and figures",
         route: 'chinese-tourists',
         image: 'tourists',

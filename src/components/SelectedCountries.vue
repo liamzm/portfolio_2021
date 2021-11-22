@@ -2,7 +2,7 @@
 
     <div class="countries">
 
-        <h4>Countries</h4>
+        <h4>Selected countries</h4>
 
         <div class="countries-box">
 
@@ -105,6 +105,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    
 }
 
 .country {
@@ -116,8 +117,9 @@ export default {
     align-items: center;
     text-transform: capitalize;
     margin: 20px 10px 0px 0px;
-    border-radius: 5px;
+    border-radius: 2.5px;
     cursor: pointer;
+    height: 20px;
 }
 
 .country p {
@@ -126,13 +128,11 @@ export default {
 
 .selected {
     background-color: #27A9E1;
-    border: 1px solid #27A9E1 !important;
     color: white !important;
 }
 
 .cannot-select {
     color: gray;
-    /* border: 1px solid lightgray; */
 }
 
 h4 { 
@@ -150,6 +150,7 @@ h4 {
     font-weight: 600;
     border-radius: 2.5px;
     cursor: pointer;
+    font-size: 12.5px;
     margin-bottom: 30px;
 }
 

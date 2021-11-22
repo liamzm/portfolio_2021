@@ -40,9 +40,7 @@ export default {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    /* align-items: flex-start; */
     padding: 25px;
-    /* border: 1px solid lightgray; */
     border-radius: 10px;
 }
 
@@ -60,7 +58,6 @@ export default {
 }
 
 .image {
-    /* object-fit: cover; */
     max-height: 319.031px;
     border-radius: 10px;
     height: auto;
@@ -69,9 +66,7 @@ export default {
 
 h1 {
     margin: 10px 0px 20px 0px;
-    /* width: max-content; */
     font-weight: 600;
-    /* font-size: 50px; */
     box-sizing: border-box;
 }
 
@@ -89,11 +84,9 @@ h1 {
     display: flex;
     flex-direction: row;
     margin: 20px 0px 0px 0px;
-    /* background-color: black; */
     color: white;
     width: max-content;
     box-sizing: border-box;
-    /* height: 30px; */
     padding: 5px 5px 5px 5px;
     cursor: pointer;
     border-radius: 5px;

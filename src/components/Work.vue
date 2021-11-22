@@ -69,10 +69,11 @@ export default {
 }
 
 .minor-project {
-    width: 33%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;   
+    /* padding: 50px; */
 }
 
 @media(max-width: 700px) {
