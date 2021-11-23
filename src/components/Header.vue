@@ -7,8 +7,8 @@
                 <div class="content">
                     <h3 @click="returnHome()">Liam Zanyk McLean</h3>
                     <div class="links">
-                        <div>About</div>
-                        <div>Contact</div>
+                        <div @click="redirectToAbout()">About</div>
+                        <div @click="redirectToContact()">Contact</div>
                     </div>
                 </div>
             </div>
@@ -42,6 +42,12 @@ export default {
             } else if (window.scrollY < target.offsetHeight) {
                 this.fixed = false
             }
+        },
+        redirectToAbout() {
+            this.$router.replace('/about')
+        },
+        redirectToContact() {
+            this.$router.replace('/contact')
         }
     }
 }
@@ -96,6 +102,12 @@ export default {
 .links div {
     box-sizing: border-box;
     padding: 10px 20px 10px 20px;
+    cursor: pointer;
+}
+
+.links div:hover {
+    opacity: 0.5;
+    transition: 0.2s;
 }
 
 #header h3 {

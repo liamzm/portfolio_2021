@@ -7,9 +7,9 @@
             <h3 @click="returnHome()">Liam Zanyk McLean</h3>
 
             <div class="links">
-                <div class="link">About</div>
-                <div class="link">Contact</div>
-                <div class="link"><img src="../assets/icons/git.svg" /></div>
+                <div class="link" @click="redirectToAbout()">About</div>
+                <div class="link" @click="redirectToContact()">Contact</div>
+                <div class="link" @click="openGithub()"><img src="../assets/icons/git.svg" /></div>
             </div>
 
         </div>
@@ -28,6 +28,15 @@ export default {
     methods: {
         returnHome() {
             this.$router.replace('/');
+        },
+        redirectToAbout() {
+            this.$router.replace('/about')
+        },
+        redirectToContact() {
+            this.$router.replace('/contact')
+        },
+        openGithub() {
+            window.open('https://github.com/liamzm')
         }
     }
 }
@@ -74,6 +83,7 @@ h3 {
 .link {
     font-size: 12.5px;
     margin: 0px 10px 0px 10px;
+    cursor: pointer;
 }
 
 .link img {

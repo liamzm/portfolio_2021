@@ -183,6 +183,8 @@ body {
   opacity: 0;
 }
 
+
+
 @media(max-width: 700px) {
   .sidebar {
     width: 100%;
