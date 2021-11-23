@@ -4,7 +4,7 @@
         
         <h1>Urban sprawl</h1>
 
-        <h2>Comparing the cities of the world with populations of more than 1 million people.</h2>
+        <h2>All the cities of the world with a population of 1 million or more.</h2>
 
         <SelectedCountries :selected_countries="selected_countries" :all_countries="all_countries" v-on:countries_changed="updateCountries()" />
 
