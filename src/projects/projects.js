@@ -78,7 +78,7 @@ const projects = [
                 description: 'Number of countries in which unique users are located.'                
             }
         ],
-        site: 'ils-lookup.com'
+        site: 'ils-frequency-lookup.com'
     },
     { 
         name: "World's longest passenger flights",
