@@ -10,7 +10,7 @@
 
         <h1>{{ project.name }}</h1>
 
-        <a class="project-link" :href="`https://${project.site}`">{{ project.site }}</a>
+        <a class="project-link">{{ project.site }}</a>
 
         <p class="project-description">{{ project.description }}</p>
 

@@ -32,9 +32,9 @@
 
             <h4>Projects</h4>
 
-            <div v-for="project in skill.projects" :key="project">
+            <div v-for="project in skill.projects" :key="project" @click="goToProject(project.route)">
 
-                <p :style="{ 'color' : `${skill.colour}` }">{{ project }}</p>
+                <p :style="{ 'color' : `${skill.colour}` }">{{ project.name }}</p>
 
             </div>
 
@@ -60,6 +60,9 @@ export default {
             } else if (skill === 'language') {
                 return 'blue'
             }
+        },
+        goToProject(project) {
+            this.$router.replace(`/${project}`)
         }
     }
 }

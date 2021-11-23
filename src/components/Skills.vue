@@ -66,21 +66,6 @@ export default {
     data() {
         return {
             selected_skill: '',
-            // skills: [
-            //     ['Ruby on Rails', 'tech'],
-            //     ['Vue.js', 'tech'],
-            //     ['Javascript', 'tech'],
-            //     ['Modern web technologies', 'tech'],
-            //     ['Progressive Web Apps', 'tech'],
-            //     ['Adobe Illustrator', 'design'],
-            //     ['Adobe After Effects', 'design'],
-            //     ['Infographics & data visualization', 'design'],
-            //     ['Mandarin Chinese', 'language'],
-            //     ['Bahasa Indonesia', 'language'],
-            //     ['Postgresql', 'tech'],
-            //     ['Payment Integrations (Stripe, Midtrans)', 'tech'],
-            //     ['UI/UX', 'design']
-            // ],
             skills: [
                {
                     name: 'Payment integrations',
@@ -97,7 +82,7 @@ export default {
                         'Stripe Connect'
                     ],
                     projects: [
-                        'Menulingua'
+                        { name: 'Menulingua', route: 'menulingua' }
                     ]
                 },
                 {
@@ -106,7 +91,7 @@ export default {
                     icon: 'heroku',
                     colour: '#7E3F98',
                     secondary_colour: '#DACEE5',
-                    description: 'Heroku is a popular hosting platform for web-based applications, including those running on Rails. Heroku allows for rapid deployment and code pushes with little or no downtime.',
+                    description: 'Heroku is a popular hosting platform for web-based applications, including those using popular web frameworks such as Ruby on Rails. Heroku allows for rapid deployment and code pushes with little or no downtime.',
                     subskills: [
                         'Heroku CLI', 
                         'Integration with Github',
@@ -115,7 +100,7 @@ export default {
                         'Heroku PostgreSQL'
                     ],
                     projects: [
-                        'Menulingua'
+                        { name: 'Menulingua', route: 'menulingua' }
                     ]
                 },
                 {
@@ -132,9 +117,9 @@ export default {
                         'Single page apps'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup',
-                        'This very site!'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' },
+                        { name: 'This very site', route: '/' }
                     ]
                 },
                {
@@ -151,10 +136,10 @@ export default {
                         'Usage across Adobe CS'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup',
-                        'This very site!',
-                        'Chinese tourists'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' },
+                        { name: 'This very site', route: '/' },
+                        { name: 'Chinese tourism: facts and figures', route: 'chinese-tourists'}
                     ]
                 },
                {
@@ -171,8 +156,8 @@ export default {
                         'Robust security paramters'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' }
                     ]
                 },
                 {
@@ -189,9 +174,9 @@ export default {
                         'Tailwind'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup',
-                        'This very site!'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' },
+                        { name: 'This very site', route: '/' }
                     ]
                 },
                 {
@@ -210,9 +195,9 @@ export default {
                         'User interactivity'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup',
-                        'This very site!'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' },
+                        { name: 'This very site', route: '/' }
                     ]
                 },
                 {
@@ -221,7 +206,7 @@ export default {
                     icon: 'pwa',
                     colour: '#59595B',
                     secondary_colour: '#E2E1E9',
-                    description: 'Progressive Web Apps are powerful, modern and allow maintenance across web, Android and iOS all from a single codebase. PWAs are the future! ',
+                    description: 'Progressive Web Apps are powerful, modern and allow management across web, Android and iOS all from a single codebase. PWAs are the future! ',
                     subskills: [
                         'Modern web technologies', 
                         'PWA requirements',
@@ -231,8 +216,8 @@ export default {
                         'Run on all platforms'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' }
                     ]
                 },    
                 {
@@ -250,7 +235,7 @@ export default {
                         'Datatypes'
                     ],
                     projects: [
-                        'Menulingua'
+                        { name: 'Menulingua', route: 'menulingua' }
                     ]
                 },      
                 {
@@ -268,9 +253,9 @@ export default {
                         'Git with open source'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup',
-                        'This very site!'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' },
+                        { name: 'This very site', route: '/' }
                     ]
                 },               
                 {
@@ -288,7 +273,7 @@ export default {
                         'UI/UX principles for data visualization'
                     ],
                     projects: [
-                        'Chinese tourists'
+                        { name: 'Chinese tourism: facts and figures', route: 'chinese-tourists'}
                     ]
                 },
 
@@ -311,7 +296,7 @@ export default {
                         'OOP principles'
                     ],
                     projects: [
-                        'Menulingua'
+                        { name: 'Menulingua', route: 'menulingua' }
                     ]
                 },
                 { 
@@ -328,10 +313,10 @@ export default {
                         'Vector artwork'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup',
-                        "World's longest passenger flights",
-                        'Chinese tourists'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' },
+                        { name: "World's longest passenger flights", route: 'longest-passenger-flights' },
+                        { name: 'Chinese tourism: facts and figures', route: 'chinese-tourists'}
                     ]
                 },
                 { 
@@ -350,8 +335,8 @@ export default {
                         'Wireframing and video planning'
                     ],
                     projects: [
-                        'Chinese tourists',
-                        "World's longest passenger flights"
+                        { name: 'Chinese tourism: facts and figures', route: 'chinese-tourists'},
+                        { name: "World's longest passenger flights", route: 'longest-passenger-flights' }
                     ]
                 },
                 { 
@@ -368,8 +353,8 @@ export default {
                         'Multilingual web design for written Chinese'
                     ],
                     projects: [
-                        'Menulingua',
-                        'Chinese tourists'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'Chinese tourism: facts and figures', route: 'chinese-tourists'}
                     ]
                 },
                 { 
@@ -378,7 +363,7 @@ export default {
                     icon: 'id',
                     colour: '#D91B5B',
                     secondary_colour: '#F8E1E1',
-                    description: 'Spoken by more than 200 million people across the vast archipelago, Indonesian serves as lingua franca among the diverse citizens of this island nation.',
+                    description: 'Spoken by more than 200 million people across Indonesia, Bahasa Indonesia serves as a lingua franca, bringing the achipelago together.',
                     subskills: [
                         'Spoken Indonesian', 
                         'Written Indonesian',
@@ -387,7 +372,7 @@ export default {
                         'Formal and informal Indonesian'
                     ],
                     projects: [
-                        'Menulingua'
+                        { name: 'Menulingua', route: 'menulingua' }
                     ]
                 },
                 {
@@ -407,9 +392,9 @@ export default {
                         'Vue CLI'
                     ],
                     projects: [
-                        'Menulingua',
-                        'ILS Frequency Lookup',
-                        'This very site!'
+                        { name: 'Menulingua', route: 'menulingua' },
+                        { name: 'ILS Frequency Lookup', route: 'ils-frequency-lookup' },
+                        { name: 'This very site', route: '/' }
                     ]
                 }
             ]

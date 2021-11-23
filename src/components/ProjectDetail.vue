@@ -39,7 +39,7 @@
 
                     <h1>{{ project.name }}</h1>
 
-                    <h2 v-if="project.site != ''">{{ project.site }}</h2>
+                    <h2 v-if="project.site != ''" @click="goToProject(project.site)">{{ project.site }}</h2>
 
                     <p>{{ project.description }}</p>
 
@@ -102,6 +102,9 @@ export default {
             if (link != null) {
                 window.location.replace(link)
             }
+        },
+        goToProject(site) {
+            window.open(`https://${site}`)
         }
     }
 }
@@ -186,6 +189,7 @@ export default {
 .name h2 {
     font-weight: 400;
     margin: 0px 0px 10px 0px;
+    cursor: pointer;
 }
 
 .name p {
@@ -206,7 +210,6 @@ export default {
 .skills p {
     margin: 5px 5px 5px 5px;
     width: max-content;
-    /* background-color: gray; */
     color: black;
     border: 1px solid black;
     border-radius: 2.5px;
