@@ -5,6 +5,7 @@ import ProjectDetail from '@/components/ProjectDetail.vue'
 import WorldCities from '@/components/WorldCities.vue'
 import About from '@/components/About.vue'
 import Contact from '@/components/Contact.vue'
+import PremierLeagueManagers from '@/components/PremierLeagueManagers.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/world-cities',
     name: 'WorldCitiest',
     component: WorldCities
+  },
+  {
+    path: '/premier-league-managers',
+    name: 'PremierLeagueManagers',
+    component: PremierLeagueManagers
   },
   {
     path: '/:project',
