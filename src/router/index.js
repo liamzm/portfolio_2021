@@ -27,7 +27,7 @@ const routes = [
   },
   { 
     path: '/world-cities',
-    name: 'WorldCitiest',
+    name: 'WorldCities',
     component: WorldCities
   },
   {

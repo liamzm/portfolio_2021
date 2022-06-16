@@ -6,45 +6,18 @@
 
             <div class="season-indicator" :style="{ 'left' : `${(seasons.indexOf(season)) * 4.545454545}%` }" :class="{ 'transparent' : !inPremierLeague(season) }"></div>
 
+
+        </div>
+
+        <div v-for="tenure in tenures" :key="Math.random().toString(16).slice(2)" :style="{ 'left' : getPosition(tenure.start_date), 'width' : getWidth(tenure.start_date, tenure.end_date) }" class="tenure" @click="selectTenure(tenure)" @mouseover="selectTenure(tenure)">
+
+            <div class="quick-name" v-if="selected_tenure === tenure" :style="{ 'left' : getPosition(tenure.end_date) }">{{ tenure.manager_name }}</div>
+
         </div>
 
         <div v-for="manager_change in manager_changes" :key="Math.random().toString(16).slice(2)">
 
-            <div class="datapoint" :class="{ 'greyed-out' : (show_details != manager_change && show_details.length > 0), 'selected' : (selected_club === club), 'clicked' : show_details === manager_change }" :style="{ 'left' : getPosition(manager_change.date_of_vacancy), 'background-color' : getReasonBorderColour(manager_change['reason of departure']) }"  @click.stop="showDetails(manager_change)" @mouseover="showName(manager_change)"></div>
-
-            <div class="quick-name" v-if="show_name === manager_change" :style="{ 'left' : getPosition(manager_change.date_of_vacancy) }">{{ manager_change.outgoing_manager }}</div>
-
-            <div class="details" v-if="show_details === manager_change && selected_club === club" >
-
-                <div class="exit-button" @click.stop="showDetails(manager_change)"><img src="@/assets/images/exitbutton.svg" /></div>
-
-                <div class="details-header">
-
-                    <img class="icon" :src="require(`../assets/images/pl_icons/${manager_change.team}.png`)" />
-
-                </div>
-
-                <div class="outgoing">
-
-                    <img class="arrow" src="../assets/icons/outgoing_arrow.svg" />
-
-                    <p class="manager-name">{{ manager_change["reason of departure"] }}: <span>{{ manager_change.outgoing_manager }}</span></p>
-
-                    <p class="date">{{ manager_change.date_of_vacancy }}</p>
-
-                </div>
-
-                <div class="incoming">
-
-                    <img class="arrow arrow-small" src="../assets/icons/incoming_arrow.svg" />
-
-                    <p class="manager-name">Replaced by <span>{{ manager_change.incoming_manager }}</span></p>
-
-                    <p class="date">{{ manager_change.date_of_appointment }}</p>
-
-                </div>
-
-            </div>
+            <div class="datapoint" :style="{ 'left' : getPosition(manager_change.date_of_vacancy) }"></div>
 
         </div>
         
@@ -59,12 +32,13 @@
 
 export default {
     name: "Timeline",
-    props: ["club", "details_shown_for", "selected_club", "seasons"],
+    props: ["club", "details_shown_for", "selected_club", "seasons", "selected_tenure"],
     data() {
         return {
             manager_changes: [],
             show_details: [],
-            show_name: []
+            show_name: [],
+            tenures: []
         }
     },
     created() {
@@ -74,12 +48,31 @@ export default {
         getClubTimeline(club) {
             const managerData = this.$premier_league_managers_dataset
             const managerChanges = []
+            const tenures = []
             for (let i = 0; i < managerData.length; i++) {
                 if (managerData[i].team === club) {
                     managerChanges.push(managerData[i])
                 }
             }
             this.manager_changes = managerChanges
+            for (let i = 0; i < this.manager_changes.length; i++) {
+                const tenure = {}
+                tenure.end_date = this.manager_changes[i].date_of_vacancy
+                tenure.manager_name = this.manager_changes[i].outgoing_manager
+                if (this.manager_changes.indexOf(this.manager_changes[i]) === 0) {
+                    tenure.start_date = '2000-06-01'
+                } else {
+                    tenure.start_date = this.manager_changes[i-1].date_of_appointment
+                }
+                tenures.push(tenure)
+            } 
+            const last_tenure = {}
+            last_tenure.start_date = this.manager_changes.slice(-1).pop().date_of_appointment 
+            const endDate = new Date() 
+            last_tenure.end_date = endDate.toISOString().split('T')[0]
+            last_tenure.manager_name = this.manager_changes.slice(-1).pop().incoming_manager
+            tenures.push(last_tenure)
+            this.tenures = tenures
         },
         showName(manager_change) {
             this.show_name = manager_change
@@ -92,17 +85,19 @@ export default {
             const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
             return `${(diffInDays / max) * 100}%`
         },
-        showDetailsFor(managerChange) {
-            this.$emit('show-details', managerChange)
+        getWidth(dateOfAppointment, dateOfSacking) {
+            const max = 8096
+            const startDate = dateOfAppointment
+            const endDate = dateOfSacking
+            const diffInMs = new Date(endDate) - new Date(startDate)
+            const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+            return `${(diffInDays / max) * 100}%`
         },
-        showDetails(managerChange) {
-            if (this.selected_club === this.club) {
-                if (this.show_details != managerChange) {
-                    this.show_details = managerChange
-                } else {
-                    this.show_details = []
-                }
-            }
+        selectTenure(tenure) {
+            this.selected_tenure = tenure
+        },
+        selectTenure(tenure) {
+            this.$emit('select-tenure', tenure)
         },
         hideDetails() {
             this.show_details = []
@@ -176,14 +171,22 @@ export default {
     width: 4.761904761%;
 }
 
+.hide-season {
+    position: absolute;
+    width: 4.761904761%;
+    background-color: white;
+    height: 20px;
+}
+
 .datapoint {
     position: absolute;
-    width: 15px;
+    width: 5px;
     height: 15px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     cursor: pointer;
     z-index: 1;
     top: -7.5px;
+    background-color: white;
     /* border: 2px solid rgba(255, 255, 255, 0.0); */
 }
 
@@ -268,7 +271,11 @@ export default {
 }
 
 .transparent {
-    visibility: hidden;
+    background-color: white;
+    height: 20px;
+    border-bottom: 0px;
+    z-index: 50;
+    top: -10px;
 }
 
 .date {
@@ -297,9 +304,26 @@ export default {
 
 .quick-name {
     position: absolute;
-    top: 10px;
+    top: 15px;
     font-size: 11px;
     font-weight: 600;
+}
+
+.tenure {
+    background-color: rgba(145, 38, 143, 0.5);
+    height: 15px;
+    position: absolute;
+    top: -7.5px;
+    margin-right: 5px;
+}
+
+.tenure:hover {
+    background-color: rgba(145, 38, 143, 1);
+    transition: 0.2s;
+}
+
+.selected-club {
+    flex-direction: column;
 }
 
 @media(max-width: 700px) {
