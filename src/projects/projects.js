@@ -98,21 +98,17 @@ const projects = [
             'Javascript',
             'Git',
             'UI/UX design',
-            'REST APIs'
+            'Email integration'
         ],
         facts: [
             { 
-                tag: '87,000',
-                description: 'Number of airports included in the project'
+                tag: 'Kenya',
+                description: 'Launch country for Plastipoint project'
             },
             {
-                tag: '100,000+',
-                description: 'Total number of searches on ILS Frequency Lookup'                
+                tag: '80%',
+                description: 'Four-fifths of global plastic waste originates in 10 river systems in emerging geographies'                
             },
-            {
-                tag: '85',
-                description: 'Number of countries in which unique users are located.'                
-            }
         ],
         site: 'plastipoint.com'
     },
