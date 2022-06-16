@@ -4,7 +4,7 @@
 
         <h1>Contact me</h1>
 
-        <p>I can be reached at <span>liamzm@gmail.com</span>.</p>
+        <p>I can be reached at <a href="mailto:liamzm@gmail.com">liamzm@gmail.com</a>.</p>
 
     </div>
 
@@ -16,7 +16,15 @@
 <script>
 
 export default {
-    name: 'Contact'
+    name: 'Contact',
+    created() {
+        this.scrollToTop();
+    },
+    methods: {
+        scrollToTop() {
+            window.scrollTo(0,0);
+        }
+    }
 }
 
 
@@ -31,6 +39,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin: auto;
+  margin-top: 100px;
   min-height: 70vh;
 }
 

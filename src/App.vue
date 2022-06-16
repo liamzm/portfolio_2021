@@ -26,6 +26,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;700&display=swap');
 
 #app {
   min-height: 100%;
@@ -70,6 +71,7 @@ body {
 
 .purple {
   color: #91268F;
+  transition: 0.2s;
 }
 
 .purple-fill {
@@ -79,6 +81,7 @@ body {
 
 .blue {
   color: #27A9E1;
+  transition: 0.2s;
 }
 
 .blue-fill {
@@ -88,6 +91,7 @@ body {
 
 .black {
   color: #231F20;
+  transition: 0.2s;
 }
 
 .black-fill {
@@ -102,6 +106,14 @@ body {
 .gray-fill {
   color: white;
   background-color: #A7A9AB;
+}
+
+
+.highlight-selected {
+    background: linear-gradient(120deg, #F8ED31 0%, #F8ED31 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+    background-position: 0 90%;
 }
 
 .tag {
@@ -122,7 +134,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .sidebar {

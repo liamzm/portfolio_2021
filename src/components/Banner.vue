@@ -2,11 +2,11 @@
 
     <div id="banner">
 
-        <h1 @click="setSkill('tech')" :class="{ 'gray' : (this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'tech'), 'small' : this.$store.getters.getSelectedSkill != '' }">Web & App Development</h1>
+        <h1 @click="setSkill('tech')" :class="{ 'gray' : (this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'tech'), 'highlight-selected' : $store.getters.getSelectedSkill === 'tech' }">Web & App Development</h1>
 
-        <h1 class="purple" @click="setSkill('design')" :class="{ 'gray' : (this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'design'), 'small' : this.$store.getters.getSelectedSkill != ''  }">Visual storytelling</h1>
+        <h1 class="purple highlight" @click="setSkill('design')" :class="{ 'gray' : (this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'design'), 'highlight-selected' : $store.getters.getSelectedSkill === 'design' }">Visual storytelling</h1>
 
-        <h1 class="blue" @click="setSkill('language')" :class="{ 'gray' : (this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'language'), 'small' : this.$store.getters.getSelectedSkill != ''  }">Language</h1>
+        <h1 class="blue highlight" @click="setSkill('language')" :class="{ 'gray' : (this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'language'), 'highlight-selected' : $store.getters.getSelectedSkill === 'language' }">Language</h1>
 
     </div>
 
@@ -44,19 +44,9 @@ export default {
     font-size: 50px;
     margin: 0px 0px 0px 0px;
     width: max-content;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.0);
     box-sizing: border-box;
     padding: 10px 0px 10px 0px;
     cursor: pointer;
-}
-
-#banner h1:hover {
-    border-bottom: 1px dotted black;
-    transition: 0.2s;
-}
-
-.small {
-    font-size: 20px !important;
 }
 
 @media(max-width: 800px) {
