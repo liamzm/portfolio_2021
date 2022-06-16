@@ -80,6 +80,7 @@ export default {
     top: 0;
     width: 100%;
     background-color: #F7F7F7;
+    transition: 0.5s;
 }
 
 .content {

@@ -6,18 +6,7 @@
 
         <h2>Beginning in 2000-01 season</h2>
 
-        <div class="reasons-for-departure">
-
-            <div v-for="reason in reasons" :key="reason" class="flex">
-
-                <div class="reason-indicator" :style="{ 'background-color' : getReasonBorderColour(reason) }"></div>
-
-                {{ reason }}
-
-            </div>
-
-        </div>
-
+   
 
         <div id="graph-container">
 
@@ -47,7 +36,7 @@
 
                 <div v-for="club in clubs" :key="club" class="row" :class="{ 'selected' : selected_club === club, 'unselected' : selected_club != club }" @click="selectClub(club)">
 
-                    <Timeline :club="club" :details_shown_for="details_shown_for" v-on:show-details="showDetails" :selected_club="selected_club" :seasons="seasons" />
+                    <Timeline :club="club" v-on:select-tenure="selectTenure" :selected_club="selected_club" :seasons="seasons" :selected_tenure="selected_tenure" />
 
                 </div>
 
@@ -78,6 +67,7 @@ export default {
             datapoints: [],
             details_shown_for: [],
             selected_club: '',
+            selected_tenure: [],
             reasons: []
         }
     },
@@ -127,9 +117,9 @@ export default {
             }
             this.clubs = clubsList.sort((a, b) => a.localeCompare(b))     
         },
-        showDetails: function(sacking)  {
-            this.details_shown_for = []
-            this.details_shown_for = sacking
+        selectTenure: function(tenure)  {
+            this.selected_tenure = []
+            this.selected_tenure = tenure
         },
         selectClub(club) {
             if (this.selected_club != club) {
@@ -256,12 +246,12 @@ h2 {
 }
 
 .unselected:hover {
-    background-color: #F9F9ED;
+    /* background-color: #F9F9ED; */
     transition: 0.2s;
 }
 
 .selected {
-    background-color: #F4F6D4;
+    /* background-color: #F4F6D4; */
 }
 
 .reasons-for-departure {

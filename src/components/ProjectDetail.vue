@@ -51,13 +51,19 @@
 
         </div>
 
-        <Menulingua :project="project" v-if="this.$router.currentRoute.params.project === 'menulingua'" />
+        <Menulingua :project="project" v-if="$router.currentRoute.params.project === 'menulingua'" />
 
-        <IlsFrequencyLookup :project="project" v-if="this.$router.currentRoute.params.project === 'ils-frequency-lookup'" />
+        <IlsFrequencyLookup :project="project" v-if="$router.currentRoute.params.project === 'ils-frequency-lookup'" />
 
-        <PassengerFlights :project="project" v-if="this.$router.currentRoute.params.project === 'longest-passenger-flights'" />
+        <PassengerFlights :project="project" v-if="$router.currentRoute.params.project === 'longest-passenger-flights'" />
 
-        <ChineseTourists :project="project" v-if="this.$router.currentRoute.params.project === 'chinese-tourists'" />
+        <ChineseTourists :project="project" v-if="$router.currentRoute.params.project === 'chinese-tourists'" />
+
+        <NewTalentFestival :project="project" v-if="$router.currentRoute.params.project === 'new-talent-festival'" />
+
+        <Plastipoint :project="project" v-if="$router.currentRoute.params.project === 'plastipoint'" />
+
+        <RJMT :project="project" v-if="$router.currentRoute.params.project === 'rjmt'" />
 
     </div>
 
@@ -69,6 +75,9 @@ import Menulingua from '@/components/Menulingua'
 import IlsFrequencyLookup from '@/components/IlsFrequencyLookup'
 import PassengerFlights from '@/components/PassengerFlights'
 import ChineseTourists from '@/components/ChineseTourists'
+import NewTalentFestival from '@/components/NewTalentFestival'
+import Plastipoint from '@/components/Plastipoint'
+import RJMT from '@/components/RJMT'
 import { vueVimeoPlayer } from 'vue-vimeo-player'
 
 export default {
@@ -78,6 +87,9 @@ export default {
         IlsFrequencyLookup,
         PassengerFlights,
         ChineseTourists,
+        NewTalentFestival,
+        Plastipoint,
+        RJMT,
         vueVimeoPlayer
     },
     props: ['project'],    
