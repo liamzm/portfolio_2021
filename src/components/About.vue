@@ -37,7 +37,15 @@
 <script>
 
 export default {
-    name: 'About'
+    name: 'About',
+    created() {
+        this.scrollToTop();
+    },
+    methods: {
+        scrollToTop() {
+            window.scrollTo(0,0);
+        }
+    }
 }
 
 
@@ -53,6 +61,7 @@ export default {
   flex-direction: column;
   margin: auto;
   min-height: 80vh;
+  margin-top: 100px;
 }
 
 .info-container-content {

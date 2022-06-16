@@ -133,6 +133,7 @@ export default {
     margin: auto;
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
 }
 
 .header {

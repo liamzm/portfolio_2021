@@ -10,27 +10,27 @@
 
             <div class="categories">
                 
-                <div class="black" @click="setSkill('tech')" :class="{ 'gray' : this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'tech' }">
+                <div class="black" @click="setSkill('tech')" :class="{ 'gray' : $store.getters.getSelectedSkill != '' && $store.getters.getSelectedSkill != 'tech' }">
                     
-                    <span class="black-fill circle" :class="{ 'gray-fill' : this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'tech' }"></span>
+                    <span class="black-fill circle" :class="{ 'gray-fill' : $store.getters.getSelectedSkill != '' && $store.getters.getSelectedSkill != 'tech' }"></span>
 
-                    <p>Technology</p>
-
-                </div>
-
-                <div class="purple" @click="setSkill('design')" :class="{ 'gray' : this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'design' }">
-
-                    <span class="purple-fill circle" :class="{ 'gray-fill' : this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'design' }"></span>
-
-                    <p>Design</p>
+                    <p :class="{ 'highlight-selected' : $store.getters.getSelectedSkill === 'tech' }">Technology</p>
 
                 </div>
 
-                <div class="blue" @click="setSkill('language')" :class="{ 'gray' : this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'language' }">
+                <div class="purple" @click="setSkill('design')" :class="{ 'gray' : $store.getters.getSelectedSkill != '' && $store.getters.getSelectedSkill != 'design' }">
 
-                    <span class="blue-fill circle" :class="{ 'gray-fill' : this.$store.getters.getSelectedSkill != '' && this.$store.getters.getSelectedSkill != 'language' }"></span>
+                    <span class="purple-fill circle" :class="{ 'gray-fill' : $store.getters.getSelectedSkill != '' && $store.getters.getSelectedSkill != 'design' }"></span>
 
-                    <p>Language & Localisation</p>
+                    <p :class="{ 'highlight-selected' : $store.getters.getSelectedSkill === 'design' }">Design</p>
+
+                </div>
+
+                <div class="blue" @click="setSkill('language')" :class="{ 'gray' : $store.getters.getSelectedSkill != '' && $store.getters.getSelectedSkill != 'language' }">
+
+                    <span class="blue-fill circle" :class="{ 'gray-fill' : $store.getters.getSelectedSkill != '' && $store.getters.getSelectedSkill != 'language' }"></span>
+
+                    <p :class="{ 'highlight-selected' : $store.getters.getSelectedSkill === 'language' }">Language & Localisation</p>
 
                 </div>
 
@@ -437,6 +437,14 @@ export default {
     margin-bottom: 25px;
 }
 
+.categories p {
+    font-family: "Cabin", sans-serif;
+    text-transform: uppercase;
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
 .categories div {
     display: flex;
     flex-direction: row;
@@ -449,19 +457,14 @@ export default {
     padding: 5px 5px 5px 5px;
 }
 
-.categories div:hover {
-    border: 1px solid lightgray;
-    transition: 0.5s;
-}
-
 .categories div p {
     margin: 0px 0px 0px 0px;
     white-space: nowrap;
 }
 
 .circle {
-    width: 15px;
-    height: 15px;
+    width: 7.5px;
+    height: 7.5px;
     border-radius: 50%;
     margin-right: 5px;
 }

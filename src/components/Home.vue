@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div class="home-container">
 
         <Banner />
 
@@ -78,6 +78,10 @@ export default {
 
 .github-refer p span {
     font-weight: 600;
+}
+
+.home-container {
+    margin-top: 100px;
 }
 
 

@@ -1,20 +1,30 @@
 <template>
-
-    <div class="container">
-        <div class="pseudo" v-if="fixed === true"></div>
         
-            <div id="header" :class="{ 'fixed' : fixed === true }">
-                <div class="content">
-                    <h3 @click="returnHome()">Liam Zanyk McLean</h3>
-                    <div class="links">
-                        <div @click="redirectToAbout()">About</div>
-                        <div @click="redirectToContact()">Contact</div>
-                    </div>
-                </div>
+    <div id="header" :class="{ 'small-header' : fixed === true }">
+        
+        <div class="content" :class=" { 'content-scrolled' : fixed === true }">
+            
+            <div class="main-info" @click="returnHome()">
+                <img src="@/assets/images/mustache.svg" />
+                <h3>Liam Zanyk McLean</h3>
             </div>
+            
+            <div class="links">
+
+                <div class="link" :class="{ 'small-margin' : fixed === true }" @click="redirectToAbout()">
+                    <img src="@/assets/images/mustache_circle.svg" />
+                    <div v-if="fixed === false">About</div>
+                </div>
+
+                <div class="link" :class="{ 'small-margin' : fixed === true }" @click="redirectToContact()">
+                    <img src="@/assets/images/contact_icon.svg" />
+                    <div v-if="fixed === false">Contact</div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
-
-
 
 </template>
 
@@ -62,25 +72,19 @@ export default {
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    height: 60px;
+    height: 100px;
     z-index: 15;
-}
-
-.pseudo {
-    height: 60px;
-    width: 100%;
-}
-
-.fixed::before {
-    margin-top: 60px;
-}
-
-.fixed {
     position: fixed;
-    top: 0;
     width: 100%;
-    background-color: #F7F7F7;
-    transition: 0.5s;
+    top: 0;
+    transition: 0.2s;
+}
+
+.small-header {
+    height: 50px !important;
+    transition: 0.2s;
+    background: rgba(235, 235, 235, 1);
+    /* border-bottom: 1px solid lightgray !important; */
 }
 
 .content {
@@ -89,8 +93,11 @@ export default {
     margin: auto;
     display: flex;
     flex-direction: row;
-    position: sticky;
     justify-content: space-between;
+}
+
+.content-scrolled {
+    height: 50px;
 }
 
 .links {
@@ -100,19 +107,44 @@ export default {
     align-items: center;
 }
 
-.links div {
-    box-sizing: border-box;
-    padding: 10px 20px 10px 20px;
+.main-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-info img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+
+.link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 50px;
+    transition: 0.2s;
     cursor: pointer;
 }
 
-.links div:hover {
-    opacity: 0.5;
+.link img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.small-margin {
+    margin-left: 20px;
     transition: 0.2s;
 }
 
+
 #header h3 {
     cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.5px;
+
 }
 
 @media(max-width: 700px) {
