@@ -98,7 +98,7 @@ const projects = [
             'Javascript',
             'Git',
             'UI/UX design',
-            'REST APIs'
+            'Email integration'
         ],
         facts: [
             { 
