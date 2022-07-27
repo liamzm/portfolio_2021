@@ -118,6 +118,8 @@ const projects = [
         image: 'ils-lookup',
         video_link: '',
         major_project: false,
+        open_source: true,
+        github_link: "https://github.com/liamzm/ils-lookup",
         icon: 'ils-lookup_logo.svg',
         tag: 'Progressive Web App • Frontend',
         colour: '#113E4D',

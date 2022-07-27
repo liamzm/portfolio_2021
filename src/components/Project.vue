@@ -8,6 +8,8 @@
 
         <p class="tag">{{ project.tag }}</p>
 
+        <p class="open-source" v-if="project.open_source == true" @click="goToProjectGithub(project.github_link)"><img src="@/assets/icons/git_white.svg" />Open Source</p>
+
         <h1>{{ project.name }}</h1>
 
         <a class="project-link">{{ project.site }}</a>
@@ -27,7 +29,12 @@
 
 export default {
     name: 'Project',
-    props: ['project']
+    props: ['project'],
+    methods: {
+      goToProjectGithub(link) {
+        window.open(`${link}`, '_blank');
+      }
+    }
 }
 
 
