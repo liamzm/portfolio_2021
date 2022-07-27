@@ -4,6 +4,8 @@
 
         <div class="tag">{{ project.tag }}</div>
 
+        <p class="open-source" v-if="project.open_source == true" @click="goToProjectGithub(project.github_link)"><img src="@/assets/icons/git_white.svg" />Open Source</p>
+
         <div class="header" @click="goToLink(project.video_link)">
 
             <img :src="require(`../assets/images/${project.image}.png`)" class="image" v-if="project.video_link === ''" />
@@ -117,6 +119,9 @@ export default {
         },
         goToProject(site) {
             window.open(`https://${site}`)
+        },
+        goToProjectGithub(link) {
+          window.open(`${link}`, '_blank');
         }
     }
 }

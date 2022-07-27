@@ -126,7 +126,7 @@ body {
     border: 1px solid gray;
     border-radius: 2.5px;
     width: max-content;
-    margin: 30px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     text-transform: uppercase;
 }
 
@@ -169,7 +169,28 @@ body {
 
 .image-cont img {
   border-radius: 5px;
-  /* border: 1px solid lightgray; */
+}
+
+.open-source {
+  top: 0px;
+  background-color: #38B449;
+  box-sizing: border-box;
+  border-radius: 2.5px;
+  padding: 2.5px 5px 2.5px 5px;
+  color: white;
+  font-weight: 600;
+  font-size: 12.5px;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  margin: 0px 0px 0px 0px;
+  cursor: pointer;
+}
+
+.open-source img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
 
 .one-image img {
@@ -194,8 +215,6 @@ body {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-
-
 
 @media(max-width: 700px) {
   .sidebar {
