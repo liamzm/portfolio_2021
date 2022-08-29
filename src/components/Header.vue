@@ -83,7 +83,8 @@ export default {
 .small-header {
     height: 50px !important;
     transition: 0.2s;
-    background: rgba(235, 235, 235, 1);
+    /* background: rgba(235, 235, 235, 1); */
+    background: linear-gradient(120deg, #F0E0EF 0%, #E4F0F9 100%);
     /* border-bottom: 1px solid lightgray !important; */
 }
 

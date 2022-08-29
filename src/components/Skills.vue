@@ -421,13 +421,27 @@ export default {
 <style scoped>
 
 #skills {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    max-width: 1200px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1200px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 90%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* padding: 25px; */
+  /* border-radius: 25px; */
+  /* box-shadow: 0 0 16px rgba(0, 0, 0, 0.1); */
+  
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  
 }
 
 .categories {
