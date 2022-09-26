@@ -18,7 +18,7 @@
 
                 <p>Building useful tools and telling stories visually are what I like to do.</p>
 
-                <p>Currently based in Bali, Indonesia, I am the co-founder of <a href="https://menulingua.com">Menulingua, a digital restaurant menu service provider</a>.</p>
+                <p>I am a full-stack developer at <a href="https://menulingua.com">Menulingua, a digital restaurant menu service provider</a>.</p>
 
                 <p>I am available for freelance projects.</p>
 
